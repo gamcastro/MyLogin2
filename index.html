@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <header>
+            <h1>Bem-vindo</h1>
+            <p class="main__subtitle">Entre com suas credenciais</p>
+        </header>
+        <main>
+            <div class="form">
+                <div class="form__header">
+                    <h3>Entrar na conta</h3>
+                    <p class="form__header__subtitle">Utilize seu CPF e senha para
+                        acessar</p>
+                </div>
+                <div class="form__main">
+                    <form action="#" class="form__main__input">
+                        
+                        <div class="form__main__input__label-cpf">
+                             <label for="cpf">CPF</label>
+                            <input type="text" name="cpf" id="cpf" class="input__rounded" placeholder="000.000.000-00">
+                        </div>                           
+                     
+                        
+                        <div class="form__main__input__label-password">
+                            <label for="senha">Senha</label> 
+                            <a href="#">Esqueceu a senha?</a>
+                        </div>
+                       
+                        <div class="form__main__input__button">
+                            <input type="password" name="senha" id="senha" class="input__rounded" placeholder="Sua senha">
+                            <button type="button" id="togglePassword">
+                                <i id="icon" class="fa fa-eye"></i>
+                            </button>
+                            <input type="submit" value="Entrar" class="button__rounded">
+                        </div>
+                        
+                    </form>
+                </div>
+                <div class="form__footer">
+                    <p class="form__header__subtitle">Não tem conta? <a href="#">Cadastra-se</a> </p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Seleciona os elementos
+        const passwordInput = document.getElementById('senha');
+        const togglePasswordButton = document.getElementById('togglePassword');
+        const icon = document.getElementById('icon');
+
+        // Adiciona o evento de clique no botão
+        togglePasswordButton.addEventListener('click', () => {
+            // Alterna o tipo de input
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+
+            // Alterna o ícone
+            icon.className = isPassword ? 'fa fa-eye-slash' : 'fa fa-eye';
+        });
+    </script>
+</body>
+</html>
